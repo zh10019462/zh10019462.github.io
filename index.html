@@ -152,6 +152,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-web前端基础第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/19/web前端基础第一章/">web前端基础第一章</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/19/web前端基础第一章/" class="archive-article-date">
+  	<time datetime="2019-10-19T06:56:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>/*<br>Mysql第三次课<br>   order by 排序<br>   group by 分组<br>      把一张表，按某个字段，分成几组<br>   连接<br>    普通连接,内连接,<br>    外连接（左连接与右连接）<br>    全连接<br><em>/<br>CREATE DATABASE SchoolDB1;<br>USE SchoolDB1;<br>CREATE TABLE student(<br>  sid INT PRIMARY KEY AUTO_INCREMENT,<br>  snam VARCHAR(20) NOT NULL,<br>  sex  VARCHAR(5),<br>  sage INT,<br>  stel VARCHAR(18) UNIQUE<br>)<br>CREATE TABLE Course(<br>   cid INT PRIMARY KEY AUTO_INCREMENT,<br>   cnam VARCHAR(50) NOT NULL<br>)<br>CREATE TABLE Score(<br>    scid INT PRIMARY KEY AUTO_INCREMENT,<br>    sid INT,<br>    cid INT,<br>    score INT<br>)<br>INSERT INTO student(snam,sex,sage,stel)<br>  VALUES(‘张三’,’男’,18,’18530900286’)<br>  ,(‘李四’,’女’,19,’18630900286’),<br>  (‘王五’,’男’,19,’18539900286’),<br>  (‘赵六’,’女’,18,’18537900286’),<br>  (‘田七’,’男’,18,’18530960286’);<br>INSERT INTO course(cnam)<br>    VALUES(‘计算机基础’),(‘网页基础’),<br>    (‘java基础’);<br>INSERT INTO score(sid,cid,score)<br>    VALUES(1,1,87),(1,2,90),(1,3,55)<br>    ,(2,1,90),(2,2,59),(2,3,75),<br>    (3,1,77),(3,2,77),(4,1,77),<br>    (4,3,88),(5,1,55),(5,2,88),<br>    (5,3,92),(6,1,78),(6,2,85),<br>    (6,3,90);<br> #查询学生信息，并按年纪进行排序<br> #asc 升序   desc 降序<br> SELECT * FROM student ORDER BY sage ASC;<br> #查询出每个学生的平均成绩<br> SELECT sid,AVG(score) ‘平均成绩’<br>     FROM score GROUP BY sid;<br> #查询出每个学生的平均成绩，要显示的字段<br> #为学生姓名、平均成绩。<br> #普通连接<br> #连接之后需要加连接条件，把正确的数据<br> #给筛选出来<br> SELECT snam,AVG(score) ‘平均成绩’ FROM<br>       student s,score c<br>       WHERE<br>       s.sid=c.sid GROUP BY snam;<br>#内连接<br>#inner join….on<br>SELECT snam,AVG(score) ‘平均成绩’ FROM<br>  student s INNER JOIN score c<br>  ON<br>  s.sid=c.sid<br>  GROUP BY snam;<br>#查询出没有三门课成绩的学生信息<br>SELECT * FROM student WHERE sid IN(<br>SELECT sid FROM score GROUP BY sid<br>   HAVING COUNT(</em>)&lt;3);<br>#查询有不及格成绩的学生信息，缺考算不及格</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/19/web前端基础第一章/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -165,7 +228,7 @@
 
         
         <a href="/2019/10/15/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-15T11:02:13.111Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+  	<time datetime="2019-10-15T13:51:39.120Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
 </a>
         
       </header>
