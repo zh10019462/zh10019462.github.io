@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>zhouer | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="package com.dzqc.web; import java.io.IOException; import javax.servlet.ServletException;import javax.servlet.http.HttpServlet;import javax.servlet.http.HttpServletRequest;import javax.servlet.http.Htt">
+  <meta name="description" content="title: wendate: 2019-12-11 14:56:39tags:—&amp;lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”    pageEncoding=”UTF-8”%&amp;gt;&amp;lt;%@ taglib prefix=”c” uri=”http://java.sun.com/jsp/jstl/core">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zhouer">
-<meta property="og:url" content="http://yoursite.com/2019/12/10/zhouer/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/12/11/wen/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="package com.dzqc.web; import java.io.IOException; import javax.servlet.ServletException;import javax.servlet.http.HttpServlet;import javax.servlet.http.HttpServletRequest;import javax.servlet.http.Htt">
+<meta property="og:description" content="title: wendate: 2019-12-11 14:56:39tags:—&amp;lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”    pageEncoding=”UTF-8”%&amp;gt;&amp;lt;%@ taglib prefix=”c” uri=”http://java.sun.com/jsp/jstl/core">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-10T13:54:39.113Z">
+<meta property="og:updated_time" content="2019-12-11T06:57:39.383Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zhouer">
-<meta name="twitter:description" content="package com.dzqc.web; import java.io.IOException; import javax.servlet.ServletException;import javax.servlet.http.HttpServlet;import javax.servlet.http.HttpServletRequest;import javax.servlet.http.Htt">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="title: wendate: 2019-12-11 14:56:39tags:—&amp;lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”    pageEncoding=”UTF-8”%&amp;gt;&amp;lt;%@ taglib prefix=”c” uri=”http://java.sun.com/jsp/jstl/core">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,69 +154,319 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="o-zhouer" class="article article-type-o " itemscope itemprop="blogPost">
+            <article id="post-wen" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      zhouer
-    </h1>
-  
-
-        
-        <a href="/2019/12/10/zhouer/" class="archive-article-date">
-  	<time datetime="2019-12-10T13:48:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>package com.dzqc.web;</p>
-<p>import java.io.IOException;</p>
-<p>import javax.servlet.ServletException;<br>import javax.servlet.http.HttpServlet;<br>import javax.servlet.http.HttpServletRequest;<br>import javax.servlet.http.HttpServletResponse;</p>
-<p>import com.dzqc.bean.UserInfo;<br>import com.dzqc.bean.common.Page;<br>import com.dzqc.service.Userservice;<br>import com.dzqc.service.impl.UserServiceImpl;</p>
-<p>/**</p>
-<ul>
-<li><p>Servlet implementation class UserQueryServlet</p>
-</li>
-<li><p>/<br>public class UserQueryServlet extends HttpServlet {<br>  private static final long serialVersionUID = 1L;<br>  Userservice userservice=new  UserServiceImpl();<br>  /**</p>
-<ul>
-<li><p>@see HttpServlet#HttpServlet()</p>
-</li>
-<li><p>/<br>public UserQueryServlet() {<br>  super();<br>}</p>
-<p>/**</p>
-</li>
-<li><p>@see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)</p>
-</li>
-<li><p>/<br>protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br> String type=request.getParameter(“type”);<br> if(type.equals(“listUser”)){</p>
-<pre><code>listUser(request,response);</code></pre><p> }else if(type.equals(“page”)){</p>
-<pre><code>page(request,response);</code></pre><p> }else if(type.equals(“userDetail”)){</p>
-<pre><code>userDetail(request,response);</code></pre><p> }else if(type.equals(“userDelete”)){</p>
-<pre><code>userDelete(request,response);</code></pre><p> }<br>}</p>
-<p>private void userDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br>  String id=request.getParameter(“id”);<br>  int n=userservice.deleteUserById(id);<br>  if(n&gt;0){</p>
-<pre><code>request.setAttribute(&quot;info&quot;, &quot;删除成功&quot;);</code></pre><p>  }else{</p>
-<pre><code>request.setAttribute(&quot;info&quot;, &quot;删除失败&quot;);</code></pre><p>  }<br>  request.getRequestDispatcher(“view/user/user_save.jsp”).forward(request, response);</p>
-<p>}</p>
-<p>private void userDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br>String id=request.getParameter(“id”);<br>UserInfo ufe=userservice.getUserInfoById(id);<br>request.setAttribute(“ufe”, ufe);<br>request.getRequestDispatcher(“view/user/user_details.jsp”).forward(request, response);</p>
-<p>}</p>
-<p>private void page(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br>  String name=request.getParameter(“userName”);<br>  String queryType=request.getParameter(“queryType”);<br>  String pageNum=request.getParameter(“num”);<br>  System.out.println(name+” “+queryType+” “+pageNum);<br>  Page page=userservice.getAllUser(name, queryType, pageNum);<br>  page.setUri(“/UserQueryServlet?type=page&amp;userName=”+name+”&amp;queryType=”+queryType);<br>  request.setAttribute(“page”, page);<br>  request.getRequestDispatcher(“view/user/user_list.jsp”).forward(request, response);</p>
-<p>}</p>
-<p>private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br>  String name=request.getParameter(“userName”);<br>  String queryType=request.getParameter(“queryType”);<br>  Page page=userservice.getAllUser(name, queryType, “1”);<br>  page.setUri(“/UserQueryServlet?type=page&amp;userName=”+name+”&amp;queryType=”+queryType);<br>  System.out.println(page);<br>  request.setAttribute(“page”, page);<br>  request.getRequestDispatcher(“view/user/user_list.jsp”).forward(request, response);</p>
-<p>}</p>
-<p>/**</p>
-</li>
-<li><p>@see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)</p>
-</li>
-<li><p>/<br>protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br>  // TODO Auto-generated method stub<br>  doGet(request, response);<br>}</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>}</p>
+        <hr>
+<p>title: wen<br>date: 2019-12-11 14:56:39<br>tags:<br>—&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”<br>    pageEncoding=”UTF-8”%&gt;<br>&lt;%@ taglib prefix=”c” uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;</a> %&gt;<br><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"></p>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/resource/css/admin.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resource/js/CheckForm.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resource/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resource/js/FormValid.js"></script>
+</head>
+<body>
+<form action="${pageContext.request.contextPath}/UserUpdateServlet" method="post" name="form2" onsubmit="return validator(this)">
 
+<pre><code>&lt;table class=editTable cellSpacing=1 cellPadding=0 width=&quot;100%&quot;
+    align=center border=0&gt;
+    &lt;tr class=editHeaderTr&gt;
+        &lt;td class=editHeaderTd colSpan=7&gt;
+            请修改用户的详细信息
+            &lt;input type=&quot;hidden&quot; name=&quot;userId&quot; value=&quot;${ufe.user_id }&quot;
+                readonly=&quot;readonly&quot;&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                姓名：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot; style=&quot;width: 145px&quot; name=&quot;userName&quot;  value=&quot;${ufe.user_name }&quot;
+                readonly=&quot;readonly&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                年龄：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot;  style=&quot;width: 145px&quot; name=&quot;userAge&quot; maxlength=&quot;2&quot;  valid=&quot;required|isNumber&quot;  errmsg=&quot;员工年龄不能为空!|请输入正确的年龄!&quot; value=&quot;${ufe.user_age }&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot; style=&quot;height: 21px&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                性别：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot; style=&quot;height: 21px&quot;&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;userSex&quot;
+                &lt;c:if test=&quot;${ufe.user_sex==&apos;男&apos;}&quot;&gt;checked=&quot;checked&quot;&lt;/c:if&gt; 
+                 value=&quot;男&quot; /&gt;
+            男
+            &lt;input type=&quot;radio&quot; name=&quot;userSex&quot;
+                &lt;c:if test=&quot;${ufe.user_sex==&apos;女&apos;}&quot;&gt;checked=&quot;checked&quot;&lt;/c:if&gt; value=&quot;女&quot; /&gt;
+            女
+            &lt;br /&gt;
+        &lt;/td&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                民族：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot;  style=&quot;width: 145px&quot; name=&quot;userNation&quot;
+                value=&quot;${ufe.user_nation }&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                学历：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;select name=&quot;userDiploma&quot; style=&quot;width: 145px&quot;&gt;
+                &lt;option &lt;c:if test=&quot;${ufe.user_diploma==&apos;初中&apos;}&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt;  &gt;
+                    初中
+                &lt;/option&gt;
+
+                &lt;option &lt;c:if test=&quot;${ufe.user_diploma==&apos;高中&apos;}&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt; &gt;
+                    高中
+                &lt;/option&gt;
+                &lt;option &lt;c:if test=&quot;${ufe.user_diploma==&apos;大专&apos;}&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt; &gt;
+                    大专
+                &lt;/option&gt;
+                &lt;option &lt;c:if test=&quot;${ufe.user_diploma==&apos;本科&apos;}&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt; &gt;
+                    本科
+                &lt;/option&gt;
+                &lt;option &lt;c:if test=&quot;${ufe.user_diploma==&apos;硕士&apos;}&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt;&gt;
+                    硕士
+                &lt;/option&gt;
+                &lt;option &lt;c:if test=&quot;${ufe.user_diploma==&apos;博士&apos;}&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt;&gt;
+                    博士
+                &lt;/option&gt;
+
+            &lt;/select&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                婚姻：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;select name=&quot;isMarried&quot; style=&quot;width: 145px&quot;&gt;
+                &lt;option &lt;c:if test=&quot;${ufe.is_married==&apos;已婚&apos;}&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt;&gt;
+                    已婚
+                &lt;/option&gt;
+                &lt;option &lt;c:if test=&quot;${ufe.is_married==&apos;未婚&apos;}&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt;&gt;
+                    未婚
+                &lt;/option&gt;
+                &lt;option &lt;c:if test=&quot;${ufe.is_married==&apos;离异&apos;}&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt;&gt;
+                    离异
+                &lt;/option&gt;
+            &lt;/select&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                部门：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+        &lt;!-- 对部门进行遍历 --&gt;
+            &lt;select name=&quot;departmentId&quot; style=&quot;width: 145px&quot;&gt;
+                &lt;c:forEach items=&quot;${listDept }&quot; var=&quot;d&quot; varStatus=&quot;s&quot;&gt;
+                &lt;option value=&quot;${d.department_id }&quot;
+                    &lt;c:if test=&quot;${ufe.department_id == d.department_id }&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt;
+                    &gt;${d.department_name }&lt;/option&gt;
+                &lt;/c:forEach&gt;
+
+            &lt;/select&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                角色：
+            &lt;/div&gt;
+        &lt;/td&gt;
+
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+        &lt;!-- 对角色表中的数据进行遍历 --&gt;
+            &lt;select name=&quot;roleId&quot;  style=&quot;width: 145px&quot;&gt;
+
+                &lt;c:forEach items=&quot;${listur }&quot; var=&quot;r&quot; varStatus=&quot;s&quot;&gt;
+                &lt;option value=&quot;${r.role_id }&quot;
+                    &lt;c:if test=&quot;${ufe.role_id == r.role_id }&quot;&gt;selected=&quot;selected&quot;&lt;/c:if&gt;
+                    &gt;${r.role_name }&lt;/option&gt;
+                &lt;/c:forEach&gt;
+            &lt;/select&gt;
+        &lt;/td&gt;
+
+
+    &lt;tr&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                座机：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot;  style=&quot;width: 145px&quot; valid=&quot;isPhone&quot;   errmsg=&quot;请输入正确的座机号码!&quot; name=&quot;userTel&quot; value=&quot;${ufe.user_tel }&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                爱好：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot;  style=&quot;width: 145px&quot;  maxlength=&quot;50&quot;  name=&quot;userIntest&quot;
+                value=&quot;${ufe.user_intest }&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                工资卡号：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot; style=&quot;width: 145px&quot;  valid=&quot;isNumber&quot;   errmsg=&quot;请输入正确的工资卡号!&quot;  maxlength=&quot;20&quot;   name=&quot;userBankcard&quot;
+                value=&quot;${ufe.user_bankcard }&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                手机：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot;  style=&quot;width: 145px&quot; valid=&quot;regexp&quot;  regexp=&quot;^1[3|4|5|8][0-9]\d{8}$&quot;   errmsg=&quot;请输入正确的手机号码!&quot; name=&quot;userMobile&quot;
+                value=&quot;${ufe.user_mobile }&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                身份证：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot;  style=&quot;width: 145px&quot;  valid=&quot;isIdCard&quot;   errmsg=&quot;请输入正确的身份证号码!&quot; name=&quot;userIdnum&quot; value=&quot;${ufe.user_idnum}&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                添加时间：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot;  style=&quot;width: 145px&quot; name=&quot;userAddtime&quot; readonly=&quot;readonly&quot;
+                 value=&quot;${ufe.user_addtime}&quot;&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                添加人：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot;  style=&quot;width: 145px&quot;  maxlength=&quot;10&quot; name=&quot;userAddman&quot;
+                readonly=&quot;readonly&quot; value=&quot;${ufe.user_addman}&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                修改人：
+            &lt;/div&gt;
+        &lt;input type=&quot;hidden&quot; value=&quot;&quot; name=&quot;userChangeTime&quot; &gt;
+
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot; name=&quot;userChangeman&quot;
+                style=&quot;width: 145px&quot;    maxlength=&quot;20&quot;value=&quot;${ufe.user_changeman}&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                E_mail：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot; style=&quot;width: 145px&quot;   maxlength=&quot;50&quot; name=&quot;userEmail&quot; value=&quot;${ufe.user_email}&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+        &lt;td bgcolor=&quot;#FFFDF0&quot;&gt;
+            &lt;div align=&quot;center&quot;&gt;
+                地址：
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td colspan=&quot;3&quot; bgcolor=&quot;#FFFFFF&quot;&gt;
+            &lt;input type=&quot;text&quot; style=&quot;width: 145px&quot;  maxlength=&quot;50&quot;  name=&quot;userAddress&quot;
+                value=&quot;${ufe.user_address}&quot;&gt;
+            &amp;nbsp;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+&lt;table class=editTable cellSpacing=1 cellPadding=0 width=&quot;100%&quot;
+    align=center border=0&gt;
+    &lt;tr bgcolor=&quot;#ECF3FD&quot;&gt;
+        &lt;td width=&quot;36%&quot;&gt;&lt;/td&gt;
+        &lt;td width=&quot;17%&quot;&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot;  value=&quot;提交&quot;&gt;&lt;/td&gt;
+        &lt;td width=&quot;4%&quot;&gt;&lt;input type=&quot;button&quot; name=&quot;button&quot;  onClick=&quot;history.back() &quot;  value=&quot;返回&quot;&gt;&lt;/td&gt;
+        &lt;td width=&quot;43%&quot;&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre><script type="text/javascript">
+function showtime () {
+   var now = new Date();
+   var months = now.getMonth()+1;
+   var days = now.getDate();
+   var hours = now.getHours();
+   var minutes = now.getMinutes();
+   var seconds = now.getSeconds()
+   var timeValue =now.getFullYear()
+   timeValue +="-"+months+"-"+days+" "+hours
+   timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+   timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+   //给标签赋时间值
+   document.form2.userChangeTime.value = timeValue;
+}
+document.form2.onsubmit=function(){
+    showtime ();
+}
+
+</script>
+</form>
+</body>
+</html>
       
 
       
@@ -295,7 +545,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/10/zhouer/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/11/wen/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -309,18 +559,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/11/wen/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/06/“登录/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">“登录</div>
+    <a href="/2019/12/10/zhouer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">zhouer</div>
       <i class="icon-circle-right"></i>
     </a>
   
